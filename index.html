@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador com HTMX</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/htmx.org"></script>
+</head>
+
+<body class="flex flex-col justify-center items-center bg-neutral-800" >
+    <div id="counter" class="flex text-xl text-white p-32">{{.CounterValue}}</div>
+    <div class="flex-row space-x-6 p-6">
+        <button hx-target="#counter" hx-post="/sub" class="bg-slate-700 text-white p-6  rounded-md">
+            Diminuir -
+        </button>
+        <button hx-target="#counter" hx-post="/add" class="bg-slate-700 text-white p-6 rounded-md">
+            Aumentar +
+        </button>
+    </div>
+</body>
+</html>
